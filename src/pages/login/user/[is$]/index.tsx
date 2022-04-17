@@ -237,8 +237,8 @@ const Index: ConnectRC<IProps> = (props) => {
 					)}
 					<div className='copyright w_100 absolute flex justify_center'>
 						<span>由</span>
-						<a href='https://www.iqka.com/' target='_blank'>
-							象传智慧
+						<a href='https://www.jgdt.com/' target='_blank'>
+							建广数科
 						</a>
 						<span>提供技术支持</span>
 					</div>
