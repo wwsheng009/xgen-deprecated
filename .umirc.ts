@@ -37,6 +37,7 @@ if (process.env.APP_ENV === 'development') {
 }
 
 export default defineConfig({
+	mfsu: {},
 	theme,
 	links,
 	scripts,
@@ -114,7 +115,7 @@ const webpack_plugin_pwa: any = {
 	short_name: config.short_name,
 	fingerprints: false,
 	description: config.description,
-	background_color: '#232326',
+	background_color: '#d4d4d4',
 	theme_color: '#40b983',
 	crossorigin: 'use-credentials',
 	display: 'standalone',

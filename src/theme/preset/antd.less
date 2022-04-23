@@ -508,10 +508,27 @@
 	backdrop-filter: blur(24px);
 }
 
-// Form
-.ant-form-item {
+Form .ant-form-item {
 	.ant-form-item-control-input {
 		border-radius: 6px;
 		background-color: var(--color_bg_nav);
+		.ant-radio-inner,
+		.ant-checkbox-inner {
+			background-color: var(--color_bg);
+		}
+	}
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+	border-color: var(--color_main) !important;
+}
+
+.ant-popover-inner-content {
+	.ant-form-item-control-input {
+		.ant-input,
+		.ant-mentions,
+		.ant-select-selector {
+			background-color: var(--color_bg) !important;
+		}
 	}
 }

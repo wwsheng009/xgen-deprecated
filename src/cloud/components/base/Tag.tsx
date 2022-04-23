@@ -23,7 +23,7 @@ const Index = (props: IProps) => {
 				{props.value.map((item, index) => (
 					<Tag
 						{...props}
-						color={item.color || '#232326'}
+						color={item.color || '#d4d4d4'}
 						style={{ margin: 3 }}
 						key={index}
 					>
