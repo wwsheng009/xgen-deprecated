@@ -20,6 +20,25 @@ const Index = (props: IProps) => {
 	const [stick, setStick] = useState<boolean | undefined>(false)
 	const { messages } = useIntl()
 
+	const getDisabled = (
+		disabled: { key: string; value: string | number | Array<string | number> },
+		item: any
+	) => {
+		if (!disabled) return false
+
+		const value = getDeepValueByText(disabled.key, item)
+
+		if (Array.isArray(disabled.value)) {
+			if (disabled.value.includes(value)) {
+				return true
+			}
+		} else {
+			if (disabled.value === value) return true
+		}
+
+		return false
+	}
+
 	return (
 		<Affix offsetTop={11} style={{ zIndex: 101 }} onChange={(v) => setStick(v)}>
 			<div
@@ -28,7 +47,7 @@ const Index = (props: IProps) => {
 					stick ? 'stick' : ''
 				])}
 			>
-				{type === 'view' && setting.edit?.option?.operation && (
+				{setting.edit?.option?.operation && (
 					<div className='operation_wrap flex align_center'>
 						{setting.edit?.option?.operation?.map(
 							(item: any, index: number) => (
@@ -39,13 +58,8 @@ const Index = (props: IProps) => {
 										item?.type
 											? item.type + ' has_type'
 											: 'btn_normal',
-										item?.disabled
-											? getDeepValueByText(
-													item.disabled,
-													data
-											  )
-												? 'disabled'
-												: ''
+										getDisabled(item?.disabled, data)
+											? 'disabled'
 											: ''
 									])}
 									icon={
