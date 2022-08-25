@@ -1,0 +1,56 @@
+._local {
+	width: calc(100% - 360px);
+
+	:global {
+		.title_wrap {
+			height: 59px;
+			padding: 18px;
+			padding-bottom: 24px;
+
+			.form_fileds_title {
+				font-weight: 500;
+			}
+		}
+
+		.droppable_wrap {
+			min-height: calc(100% - 59px);
+			padding: 0 9px;
+
+			.widget_item {
+				padding: 9px;
+				outline: 1px dashed transparent;
+				border-radius: 6px;
+
+				&:last-child {
+					margin-bottom: 18px;
+				}
+
+				&.active {
+					outline-color: var(--color_main);
+				}
+
+				.top_wrap {
+					margin-bottom: 9px;
+
+					.label {
+						line-height: 1;
+					}
+
+					.actions_wrap {
+						.icon {
+							&:hover {
+								background-color: var(--color_bg_menu);
+								color: var(--color_main) !important;
+							}
+						}
+
+						.icon_move {
+							margin-left: 12px;
+							cursor: grab;
+						}
+					}
+				}
+			}
+		}
+	}
+}
